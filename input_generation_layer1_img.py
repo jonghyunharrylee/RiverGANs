@@ -5,8 +5,6 @@ Sung Eun Kim, Jonghyun Harry Lee
 
 import sys
 from scipy.io import loadmat, savemat
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import numpy as np
 import h5py
 
