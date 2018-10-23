@@ -25,6 +25,7 @@ ti=net['ti']
 print(ti.shape)
 
 TI=np.copy(ti)
+TI = TI.reshape(ti.shape[0],ti.shape[1],ti.shape[2],1)
 
 # Case directory & result directory
 case_n=1   # directory of case
