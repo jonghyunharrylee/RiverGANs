@@ -18,5 +18,8 @@ for i in range(1000):
     data = rnet['I%04d'%(i+1)]
     img=[*img,data]
 
+ti = np.zeros((1000,12,12,1))
+ti[:,:,:,0] = img
+
 savemat(('input_layer1_img_%s.mat' % (beta)), dict([('ti', img)]))
 
