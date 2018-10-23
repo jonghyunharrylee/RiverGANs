@@ -19,7 +19,7 @@ loss_d='binary_crossentropy'
 loss_g='binary_crossentropy'
 
 # Load training images
-net = loadmat('input_layer1_img.mat', squeeze_me=True)
+net = loadmat('input_layer1_img_0.0001.mat')
 
 ti=net['ti']
 print(ti.shape)

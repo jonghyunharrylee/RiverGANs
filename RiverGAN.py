@@ -146,7 +146,7 @@ class RiverGAN:
         X_train=self.TI
 
         if X_train.ndim != 4:
-            raise ValueError('your training data has a shape of (# of training samples, img size x, img size y, nchannels)')
+            raise ValueError('train data.ndim = %d instead of 4, your training data has a shape of (# of training samples, img size x, img size y, nchannels)' % (X_train.ndim))
         # Rescale -1 to 1
         
         for i in range(X_train.shape[3]):
