@@ -6,6 +6,9 @@ from scipy.io import loadmat, savemat
 
 from keras.optimizers import Adam
 
+# beta 
+beta = 1000
+
 # number of input layers(nchannel)
 nchannels = 2
 
@@ -14,12 +17,13 @@ latent_dim = 100
 
 # optimizer
 optimizer_func = Adam(0.0002, 0.5)
+
 # loss function
 loss_d='binary_crossentropy'
 loss_g='binary_crossentropy'
 
 # Load training images
-net = loadmat('input_lr_layer2.mat', squeeze_me=True)
+net = loadmat(('input_lr_layer2_%d.mat' % (beta)), squeeze_me=True)
 
 ti=net['ti']
 print(ti.shape)
