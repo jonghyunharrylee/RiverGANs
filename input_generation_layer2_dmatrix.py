@@ -20,9 +20,12 @@ z_padding=1
 
 for i in range(1000):
     data = rnet['D%04d'% (i+1)]
-    data2 = np.zeros(size)
-    data2[z_padding:size[0],z_padding:size[1]] = data
-    img=[*img,data2]
+    if (data == 4).any(): # for now..
+        pass
+    else:
+        data2 = np.zeros(size)
+        data2[z_padding:size[0],z_padding:size[1]] = data
+        img=[*img,data2]
 
 # prepare 3 channels
 img_orig=np.array(img)
@@ -40,7 +43,7 @@ img1[img_orig==1] = 0
 img1[img_orig==2] = 1 
 img1[img_orig==3] = 1 
 
-ti = np.zeros((1000,12,12,2))
+ti = np.zeros((img0.shape[0],img0.shape[1],img0.shape[2],2))
 ti[:,:,:,0] = img0
 ti[:,:,:,1] = img1
 
