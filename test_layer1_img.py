@@ -6,6 +6,9 @@ from scipy.io import loadmat, savemat
 
 from keras.optimizers import Adam
 
+# set beta
+beta = 1000
+
 # number of input layers(nchannel)
 nchannels = 1
 
@@ -19,13 +22,13 @@ loss_d='binary_crossentropy'
 loss_g='binary_crossentropy'
 
 # Load training images
-net = loadmat('input_layer1_img_0.0001.mat')
+net = loadmat('input_%d_img.mat' % (beta))
 
-ti=net['ti']
-print(ti.shape)
+TI=net['TI']
+print('TI.shape = ', (TI.shape))
 
-TI=np.copy(ti)
-TI = TI.reshape(ti.shape[0],ti.shape[1],ti.shape[2],1)
+#TI=np.copy(ti)
+#TI = TI.reshape(ti.shape[0],ti.shape[1],ti.shape[2],1)
 
 # Case directory & result directory
 case_n=1   # directory of case
