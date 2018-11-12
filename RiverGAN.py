@@ -1,7 +1,7 @@
 """
 RiverGANs 
 more description will be provided soon
-SungEun Kim, Jonghyun Harry Lee
+Sung Eun Kim, Jonghyun Harry Lee
 """
 
 import tensorflow as tf
